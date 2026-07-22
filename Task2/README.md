@@ -1,0 +1,1 @@
+this is Task 2 - A simple and responsive stopwatch website that allows users to start, stop, and record lap times. It provides accurate time tracking with an easy-to-use interface for measuring intervals and performance.
