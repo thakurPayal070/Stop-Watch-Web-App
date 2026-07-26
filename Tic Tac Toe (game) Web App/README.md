@@ -107,14 +107,12 @@ You can host this project for free using GitHub Pages:
 Your website address will normally look like:
 
 ```text
-https://thakurPayal070.github.io/CHANGE-THIS/
+https://github.com/thakurPayal070/my-first-internship
 ```
-
-Replace `CHANGE-THIS` with the exact name of your GitHub repository.
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 The JavaScript stores the nine game cells in a `board` array. Every empty string represents an available square. When a player clicks an empty cell, the program adds the current player's symbol to both the array and the visible board.
 
@@ -214,8 +212,7 @@ Contributions are welcome:
 
 ##  License
 
-**CHANGE THIS:** Add your chosen license. You can add an MIT `LICENSE` file if you want other people to reuse and modify the project.
-
+ 
 ---
 
 ##  Author
