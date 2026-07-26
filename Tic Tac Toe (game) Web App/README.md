@@ -212,7 +212,8 @@ Contributions are welcome:
 
 ##  License
 
- 
+This project is available for personal and educational use. An open-source license such as the MIT License can be added if the project will be publicly distributed or reused.
+
 ---
 
 ##  Author
