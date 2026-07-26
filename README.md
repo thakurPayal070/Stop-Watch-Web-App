@@ -100,15 +100,6 @@ cd Stop-Watch-Web-App
 
 Then open `index.html` or run it with Live Server.
 
----
-
-## ⬆ Upload Project Changes
-
-```bash
-git add .
-git commit -m "Update Starflight Stopwatch"
-git push origin main
-```
 
 ---
 
