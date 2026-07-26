@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#02060d" />
+  <title>Starflight Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <div class="space-glow" aria-hidden="true"></div>
+
+  <header class="top-hud">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <p>ORBITAL CHRONOMETER</p>
+        <small>STARFLIGHT SYSTEM // ONLINE</small>
+      </div>
+    </div>
+
+    <div class="flight-data" aria-label="Flight information">
+      <div>
+        <span>SPEED</span>
+        <strong id="speedReadout">0.00 c</strong>
+      </div>
+      <div>
+        <span>STATUS</span>
+        <strong id="statusReadout">STANDBY</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="viewport">
+    <section class="stopwatch-card" aria-labelledby="stopwatchTitle">
+      <p class="eyebrow" id="stopwatchTitle">MISSION ELAPSED TIME</p>
+
+      <div class="time-wrap" aria-live="polite" aria-atomic="true">
+        <span id="mainTime">00:00:00</span><span id="milliseconds">.000</span>
+      </div>
+
+      <div class="progress-line" aria-hidden="true">
+        <span id="progressPulse"></span>
+      </div>
+
+      <div class="controls">
+        <button class="control primary" id="startPauseButton" type="button">
+          <span class="button-icon" id="startPauseIcon" aria-hidden="true">▶</span>
+          <span id="startPauseText">START</span>
+        </button>
+
+        <button class="control" id="lapButton" type="button" disabled>
+          <span class="button-icon" aria-hidden="true">◆</span>
+          LAP
+        </button>
+
+        <button class="control danger" id="resetButton" type="button">
+          <span class="button-icon" aria-hidden="true">↺</span>
+          RESET
+        </button>
+      </div>
+
+      <p class="shortcut-help">
+        <kbd>Space</kbd> start / pause
+        <span>•</span>
+        <kbd>L</kbd> lap
+        <span>•</span>
+        <kbd>R</kbd> reset
+      </p>
+    </section>
+
+    <aside class="lap-panel" id="lapPanel" aria-label="Lap records">
+      <div class="lap-header">
+        <span>LAP RECORDS</span>
+        <span id="lapCount">00</span>
+      </div>
+      <ol id="lapList"></ol>
+    </aside>
+  </main>
+
+  <!-- Spacecraft cockpit overlay -->
+  <div class="cockpit" aria-hidden="true">
+    <svg class="cockpit-svg" viewBox="0 0 1600 900" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#0a111b" />
+          <stop offset="23%" stop-color="#2d3948" />
+          <stop offset="48%" stop-color="#090f17" />
+          <stop offset="72%" stop-color="#3e4b59" />
+          <stop offset="100%" stop-color="#090d13" />
+        </linearGradient>
+        <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f0b45a" />
+          <stop offset="45%" stop-color="#8a4d17" />
+          <stop offset="100%" stop-color="#20140b" />
+        </linearGradient>
+        <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+          <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".8"/>
+        </filter>
+      </defs>
+
+      <!-- top spacecraft shell -->
+      <path d="M0,0 H1600 V98
+               C1390,70 1230,54 1090,48
+               C980,42 900,38 800,38
+               C700,38 620,42 510,48
+               C370,54 210,70 0,98 Z"
+            fill="url(#metal)" />
+
+      <!-- curved front-window arch -->
+      <path d="M112,900
+               C114,700 130,510 188,336
+               C268,96 478,18 800,18
+               C1122,18 1332,96 1412,336
+               C1470,510 1486,700 1488,900"
+            fill="none" stroke="#05080d" stroke-width="104" filter="url(#shadow)" />
+      <path d="M112,900
+               C114,700 130,510 188,336
+               C268,96 478,18 800,18
+               C1122,18 1332,96 1412,336
+               C1470,510 1486,700 1488,900"
+            fill="none" stroke="url(#metal)" stroke-width="74" />
+      <path d="M126,900
+               C128,706 146,520 202,348
+               C278,118 488,48 800,48
+               C1112,48 1322,118 1398,348
+               C1454,520 1472,706 1474,900"
+            fill="none" stroke="url(#rim)" stroke-width="8" opacity=".85" />
+
+      <!-- left and right window supports -->
+      <path d="M0,90 L166,162 L265,900 H0 Z" fill="url(#metal)" />
+      <path d="M1600,90 L1434,162 L1335,900 H1600 Z" fill="url(#metal)" />
+      <path d="M0,105 L142,177 L225,900" fill="none" stroke="#b06a25" stroke-width="7" opacity=".65"/>
+      <path d="M1600,105 L1458,177 L1375,900" fill="none" stroke="#b06a25" stroke-width="7" opacity=".65"/>
+
+      <!-- lower dashboard -->
+      <path d="M0,790
+               C260,748 420,750 575,775
+               C645,786 710,798 800,798
+               C890,798 955,786 1025,775
+               C1180,750 1340,748 1600,790
+               V900 H0 Z"
+            fill="#070b11" />
+      <path d="M0,790
+               C260,748 420,750 575,775
+               C645,786 710,798 800,798
+               C890,798 955,786 1025,775
+               C1180,750 1340,748 1600,790"
+            fill="none" stroke="#2a3745" stroke-width="14" />
+      <path d="M300,814 H610 L650,900 H260 Z" fill="#111923" stroke="#39495b" stroke-width="4"/>
+      <path d="M990,814 H1300 L1340,900 H950 Z" fill="#111923" stroke="#39495b" stroke-width="4"/>
+
+      <!-- instrument lights -->
+      <g opacity=".9">
+        <rect x="324" y="838" width="62" height="8" rx="4" fill="#37d9ff"/>
+        <rect x="400" y="838" width="38" height="8" rx="4" fill="#ffb34d"/>
+        <rect x="451" y="838" width="78" height="8" rx="4" fill="#37d9ff"/>
+        <rect x="542" y="838" width="42" height="8" rx="4" fill="#7dffb2"/>
+
+        <rect x="1016" y="838" width="42" height="8" rx="4" fill="#7dffb2"/>
+        <rect x="1071" y="838" width="78" height="8" rx="4" fill="#37d9ff"/>
+        <rect x="1162" y="838" width="38" height="8" rx="4" fill="#ffb34d"/>
+        <rect x="1214" y="838" width="62" height="8" rx="4" fill="#37d9ff"/>
+      </g>
+    </svg>
+
+    <div class="cockpit-vignette"></div>
+  </div>
+
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
