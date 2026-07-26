@@ -247,7 +247,7 @@ This project is available for personal and educational use. An open-source licen
 
 ##  Author
 
-Created by **Payal Thakur**.
+Created by **Thakur Payal**.
 
 - GitHub: [@thakurPayal070](https://github.com/thakurPayal070)
 - Repository: [my-first-internship](https://github.com/thakurPayal070/my-first-internship)
