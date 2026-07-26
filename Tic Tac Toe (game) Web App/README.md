@@ -51,7 +51,7 @@ The game also includes a scoreboard that records how many rounds each player has
 ##  Project Structure
 
 ```text
-tic-tac-toe/
+Tic Tac Toe (game) Web App/
 ├── index.html      # Game structure and user interface
 ├── style.css       # Layout, colors, board design, and effects
 ├── script.js       # Game logic, score tracking, and controls
