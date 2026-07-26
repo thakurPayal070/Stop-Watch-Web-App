@@ -1,38 +1,41 @@
 #  Starflight Stopwatch
 
-A futuristic stopwatch web application displayed inside a **spacecraft cockpit**. When the stopwatch starts, the stars accelerate toward the viewer, creating the feeling of travelling rapidly through space. Pausing the stopwatch immediately freezes the spacecraft movement.
+A futuristic stopwatch web application with a **spacecraft cockpit interface** and an animated starfield.
 
-This project was created using **HTML, CSS, and JavaScript**. It does not require frameworks, APIs, images, packages, or external libraries.
+When the stopwatch starts, the stars accelerate toward the viewer, creating the feeling of travelling rapidly through space. When the stopwatch is paused, both the timer and the spacecraft movement stop immediately.
 
-##  Project Links
+##  Live Demo
 
-- **GitHub Repository:** [thakurPayal070/my-first-internship](https://github.com/thakurPayal070/Stop-Watch-Web-App)
-- **GitHub Profile:** [@thakurPayal070](https://github.com/thakurPayal070)
+[Open Starflight Stopwatch](https://thakurpayal070.github.io/Stop-Watch-Web-App/)
 
+##  GitHub Repository
+
+[github.com/thakurPayal070/Stop-Watch-Web-App](https://github.com/thakurPayal070/Stop-Watch-Web-App)
 
 ---
 
 ##  Features
 
-- Spacecraft front-window cockpit interface
-- Animated 3D starfield created with HTML Canvas
-- High-speed space-travel effect while the stopwatch is running
-- Stars stop immediately when the stopwatch is paused
-- Start, pause, resume, reset, and lap controls
+- Futuristic spacecraft cockpit design
+- Animated 3D starfield
+- High-speed space travel effect
+- Start, pause, resume, and reset controls
+- Lap-time recording
 - Millisecond stopwatch display
-- Mission status indicator
-- Simulated spacecraft-speed display
+- Simulated spacecraft speed indicator
+- Mission status display
 - Keyboard shortcuts
-- Responsive design for desktop, tablet, and mobile devices
-- No external assets or dependencies
+- Responsive design
+- No external libraries or packages required
 
 ---
 
 ##  Controls
 
-| Action | Button | Keyboard shortcut |
+| Action | Button | Keyboard Shortcut |
 |---|---|---|
-| Start or pause | **START / PAUSE** | `Space` |
+| Start the stopwatch | **START** | `Space` |
+| Pause or resume | **PAUSE / RESUME** | `Space` |
 | Record a lap | **LAP** | `L` |
 | Reset the stopwatch | **RESET** | `R` |
 
@@ -40,36 +43,44 @@ This project was created using **HTML, CSS, and JavaScript**. It does not requir
 
 ##  Technologies Used
 
-- **HTML5** — application structure and spacecraft cockpit SVG
-- **CSS3** — responsive layout, HUD design, glass effects, and animations
-- **JavaScript** — stopwatch logic, lap records, controls, and star movement
-- **Canvas API** — animated starfield and space-travel effect
-- **SVG** — scalable spacecraft window and cockpit dashboard
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **HTML Canvas API**
+- **SVG**
 
 ---
 
 ##  Project Structure
 
+The project files are stored directly inside the repository:
+
 ```text
 Stop-Watch-Web-App/
-├── index.html      # Application structure and spacecraft cockpit
-├── style.css       # Layout, responsive design, HUD, and animations
-├── script.js       # Stopwatch logic and animated starfield
-└── README.md       # Project documentation
+├── index.html
+├── style.css
+├── script.js
+└── README.md
 ```
+
+| File | Purpose |
+|---|---|
+| `index.html` | Stopwatch interface and spacecraft cockpit structure |
+| `style.css` | Design, animations, HUD styling, and responsive layout |
+| `script.js` | Stopwatch logic, lap system, controls, and starfield animation |
+| `README.md` | Project documentation |
 
 ---
 
 ##  Run the Project Locally
 
-### Method 1: Open the HTML file
+### Open the HTML File
 
-1. Download or clone the repository.
-2. Open the `Stop-Watch-Web-App` project folder.
+1. Download the repository.
+2. Open the project folder.
 3. Double-click `index.html`.
-4. The application will open in your default browser.
 
-### Method 2: Use VS Code Live Server
+### Use VS Code Live Server
 
 1. Open the project folder in Visual Studio Code.
 2. Install the **Live Server** extension.
@@ -82,20 +93,16 @@ No `npm install` command is required.
 
 ##  Clone the Repository
 
-Open a terminal and run:
-
 ```bash
-git clone https://github.com/thakurPayal070/my-first-internship.git
-cd my-first-internship
+git clone https://github.com/thakurPayal070/Stop-Watch-Web-App.git
+cd Stop-Watch-Web-App
 ```
 
-You can then open `index.html` directly or run the project using Live Server.
+Then open `index.html` or run it with Live Server.
 
 ---
 
-## ⬆ Upload Changes to GitHub
-
-After editing the project, use the following commands:
+## ⬆ Upload Project Changes
 
 ```bash
 git add .
@@ -105,94 +112,56 @@ git push origin main
 
 ---
 
-##  Publish with GitHub Pages
 
-This project can be hosted for free using GitHub Pages.
+##  How It Works
 
-1. Open the [project repository](https://github.com/thakurPayal070/my-first-internship).
-2. Select **Settings**.
-3. Select **Pages** from the left-side menu.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch.
-6. Select the `/root` folder.
-7. Click **Save**.
-8. Wait a few minutes for deployment to complete.
+The stopwatch uses JavaScript's `performance.now()` method to track elapsed time accurately.
 
-The website should then be available at:
-
-```text
-https://thakurPayal070.github.io/my-first-internship/
-```
+The starfield is created using the HTML Canvas API. While the stopwatch runs, stars move toward the viewer and form light trails. Pausing the stopwatch saves the elapsed time and stops the star movement. Pressing **RESUME** continues from the same point.
 
 ---
 
-##  How the Application Works
-
-The stopwatch uses `performance.now()` to measure elapsed time accurately.
-
-While the timer is active, JavaScript continuously updates hundreds of canvas stars. Each star moves closer to the viewer by changing its depth value. As the stars approach the spacecraft window, they form longer light trails and create a high-speed spaceflight effect.
-
-When the stopwatch is paused:
-
-- The elapsed time is preserved.
-- The starfield speed is set to zero.
-- The spacecraft appears to stop instantly.
-- Pressing **Resume** continues from the saved time.
-
----
-
-## ⏱ Stopwatch Functions
+##  Stopwatch Functions
 
 ### Start
+Starts the stopwatch and accelerates the spacecraft through the starfield.
 
-Pressing **START** begins the stopwatch and accelerates the spacecraft through the starfield.
+### Pause
+Pauses the stopwatch and freezes the star movement.
 
-### Pause and Resume
-
-Pressing **PAUSE** freezes the timer and space movement. Pressing **RESUME** continues both from the same point.
+### Resume
+Continues the stopwatch and restarts the space-travel animation.
 
 ### Lap
-
-The **LAP** button records the current stopwatch time without stopping it. New lap records appear in the lap panel.
+Records the current stopwatch time without stopping the timer.
 
 ### Reset
-
-The **RESET** button:
-
-- Stops the timer
-- Returns the time to `00:00:00.000`
-- Clears all lap records
-- Resets the spacecraft speed
-- Returns the application to standby mode
+Resets the stopwatch time, lap records, spacecraft speed, mission status, and star movement.
 
 ---
 
 ##  Customization
 
-### Change the star count
+### Change the Number of Stars
 
-Open `script.js` and edit:
+In `script.js`:
 
 ```javascript
 const STAR_COUNT_DESKTOP = 900;
 const STAR_COUNT_MOBILE = 520;
 ```
 
-Increasing these values creates more stars but may require more processing power.
+### Change the Spacecraft Speed
 
-### Change the travel speed
-
-Find `targetSpeed` in `script.js`:
+In `script.js`:
 
 ```javascript
 targetSpeed = 1050;
 ```
 
-A higher value makes the spacecraft appear to travel faster.
+### Change the Interface Colors
 
-### Change the interface colors
-
-Open `style.css` and edit:
+In `style.css`:
 
 ```css
 :root {
@@ -202,54 +171,27 @@ Open `style.css` and edit:
 }
 ```
 
-### Change the cockpit design
-
-The spacecraft cockpit is created using SVG elements inside `index.html`. The frame, dashboard, instrument lights, and window supports can be customized there.
-
 ---
 
 ##  Responsive Design
 
-The application automatically adjusts to different screen sizes.
-
-- On desktop, the full cockpit HUD and lap panel are displayed.
-- On tablets, the interface scales to fit the available space.
-- On mobile devices, controls and timer text are rearranged for easier use.
-
----
-
-##  Privacy
-
-The application runs completely inside the user's browser. It does not collect personal information, store user information, use cookies, connect to a database, or send information to an external server.
-
----
-
-##  Contributing
-
-Contributions and improvements are welcome.
-
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes.
-4. Commit the changes.
-5. Push the branch to GitHub.
-6. Open a pull request.
-
----
-
-##  License
-
-This project is available for personal and educational use. An open-source license such as the MIT License can be added if the project will be publicly distributed or reused.
+The application works on desktop computers, laptops, tablets, and mobile phones.
 
 ---
 
 ##  Author
 
-Created by **Thakur Payal**.
+Created by **Payal Thakur**
 
 - GitHub: [@thakurPayal070](https://github.com/thakurPayal070)
-- Repository: [my-first-internship](https://github.com/thakurPayal070/my-first-internship)
+- Repository: [Stop-Watch-Web-App](https://github.com/thakurPayal070/Stop-Watch-Web-App)
 
 ---
 
- If you like this project, consider giving the repository a star.
+##  License
+
+This project is created for educational and personal use.
+
+---
+
+ Give this repository a star if you like the project!
