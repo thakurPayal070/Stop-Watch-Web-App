@@ -83,11 +83,12 @@ No installation or `npm install` command is required.
 ##  Clone the Repository
 
 ```bash
-git clone "CHANGE THIS"
-cd "CHANGE THIS"
+git clone https://github.com/thakurPayal070/my-first-internship.git
+cd my-first-internship
+
 ```
 
-Replace the first `"CHANGE THIS"` with your GitHub repository URL and the second with your repository folder name.
+You can then open index.html directly or run the project using Live Server.
 
 ---
 
