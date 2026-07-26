@@ -169,16 +169,6 @@ The **RESET** button:
 
 ---
 
-##  Keyboard Shortcuts
-
-```text
-Spacebar = Start or pause
-L        = Record a lap
-R        = Reset
-```
-
----
-
 ##  Customization
 
 ### Change the star count
