@@ -8,7 +8,6 @@ This project was created using **HTML, CSS, and JavaScript**. It does not requir
 
 - **GitHub Repository:** [thakurPayal070/my-first-internship](https://github.com/thakurPayal070/my-first-internship)
 - **GitHub Profile:** [@thakurPayal070](https://github.com/thakurPayal070)
-- **GitHub Pages:** [Open the live project](https://thakurPayal070.github.io/my-first-internship/)
 
 > The GitHub Pages link will work after GitHub Pages has been enabled for the repository.
 
