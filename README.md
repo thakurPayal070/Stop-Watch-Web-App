@@ -6,10 +6,9 @@ This project was created using **HTML, CSS, and JavaScript**. It does not requir
 
 ##  Project Links
 
-- **GitHub Repository:** [thakurPayal070/my-first-internship](https://github.com/thakurPayal070/my-first-internship)
+- **GitHub Repository:** [thakurPayal070/my-first-internship](https://github.com/thakurPayal070/Stop-Watch-Web-App)
 - **GitHub Profile:** [@thakurPayal070](https://github.com/thakurPayal070)
 
-> The GitHub Pages link will work after GitHub Pages has been enabled for the repository.
 
 ---
 
@@ -52,7 +51,7 @@ This project was created using **HTML, CSS, and JavaScript**. It does not requir
 ##  Project Structure
 
 ```text
-my-first-internship/
+Stop-Watch-Web-App/
 ├── index.html      # Application structure and spacecraft cockpit
 ├── style.css       # Layout, responsive design, HUD, and animations
 ├── script.js       # Stopwatch logic and animated starfield
@@ -66,7 +65,7 @@ my-first-internship/
 ### Method 1: Open the HTML file
 
 1. Download or clone the repository.
-2. Open the `my-first-internship` project folder.
+2. Open the `Stop-Watch-Web-App` project folder.
 3. Double-click `index.html`.
 4. The application will open in your default browser.
 
